@@ -39,7 +39,7 @@ export class BasicScraperRouter {
                 rating: parseInt($(element).find('div[class="ratings"] > p[data-rating]').attr('data-rating')?.trim() || '0')
             })) || []
 
-            res.json(successResponse({ code: code.get.success, data: result }))
+            res.json(successResponse({ code: status, data: result }))
 
             // return res.status(200).send({ message: 'Server OK!' })
             // return res.status(200).send({
