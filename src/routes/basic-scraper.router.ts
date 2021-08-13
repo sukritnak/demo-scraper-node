@@ -22,11 +22,6 @@ export class BasicScraperRouter {
     async getResultWebscraperIo(req: Request, res: Response) {
         try {
             const { data, status } = await axios.get('https://webscraper.io/test-sites/e-commerce/allinone')
-            if (status !== 200)
-                res.status(data.status).send({
-                    message: 'Invalid URL'
-                })
-
             const html = await data;
             const $ = cheerio.load(html)
 
